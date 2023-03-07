@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CaptainCoder.Core</name>
+    </assembly>
+    <members>
+        <member name="M:CaptainCoder.Core.DictionaryExtensions.KeyValuePairEquals``2(System.Collections.Generic.Dictionary{``0,``1},System.Collections.Generic.Dictionary{``0,``1})">
+            <summary>
+            Performs a deep comparison of all key value pairs in <paramref name="dict0"/> and <paramref name="dict1"/>.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Core.MutablePosition">
+            <summary>
+            A discrete mutable position defined by a row and column. For convenience,
+            this struct can be implicitly cast to a <see cref="T:CaptainCoder.Core.Position"/>.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Core.Position">
+            <summary>
+            A discrete readonly position defined by a row and column. For convenience,
+            this struct supports an implicit cast from (int, int) tuples and the <see
+            cref="T:CaptainCoder.Core.MutablePosition"/> struct.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.Position.#ctor(System.Int32,System.Int32)">
+            <summary>
+            A discrete readonly position defined by a row and column. For convenience,
+            this struct supports an implicit cast from (int, int) tuples and the <see
+            cref="T:CaptainCoder.Core.MutablePosition"/> struct.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Core.PositionExtensions.Freeze(System.Collections.Generic.IEnumerable{CaptainCoder.Core.MutablePosition})">
+            <summary>
+            Copies an IEnumberable of <see cref="T:CaptainCoder.Core.MutablePosition"/>s and freezes them as readonly <see cref="T:CaptainCoder.Core.Position"/>s.
+            </summary>
+        </member>
+    </members>
+</doc>

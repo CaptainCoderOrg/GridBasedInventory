@@ -1,0 +1,17 @@
+{
+    "name": "CaptainCoder.Inventory.UnityEngine",
+    "rootNamespace": "CaptainCoder.Inventory.UnityEngine",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "CaptainCoder.Core.dll",
+        "CaptainCoder.Inventory.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
