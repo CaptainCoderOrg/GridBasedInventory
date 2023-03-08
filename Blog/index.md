@@ -35,7 +35,7 @@ items may occupy more than a single grid slot.
 
 ## Day 1 - Design Document and Project Scope
 
- Today, we defined our learning goals, specified the scope of the project, setup
+Today, we defined our learning goals, specified the scope of the project, setup
 a unity project, class class library project, [xUnit] test project, and defined
 two interfaces: `IInventoryItem` and `IInventoryGrid`.
 

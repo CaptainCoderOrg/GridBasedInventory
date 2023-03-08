@@ -4,5 +4,159 @@
         <name>CaptainCoder.Inventory</name>
     </assembly>
     <members>
+        <member name="T:CaptainCoder.Inventory.Dimensions">
+            <summary>
+            The readonly <see cref="T:CaptainCoder.Inventory.Dimensions"/> struct defines a discrete rectangular
+            shape using rows and columns.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Inventory.Dimensions.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructs an instance of <see cref="T:CaptainCoder.Inventory.Dimensions"/> specifying the number
+            of rows and columns it contains.
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.Inventory.Dimensions.Positions">
+            <summary>
+            Retrieves each position represented within this dimension. The returned
+            order will be left to right and top to bottom.
+            </summary>
+            <example>
+            <code>
+            Dimension d = new Dimension(3,3);
+            Console.WriteLine(string.Joint(", ", d.Positions));
+            // $ (0,0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)
+            </code>
+            </example>
+        </member>
+        <member name="P:CaptainCoder.Inventory.Dimensions.Rows">
+            <value>Must be initialized to a positive value.</value>
+        </member>
+        <member name="P:CaptainCoder.Inventory.Dimensions.Columns">
+            <value>Must be initialized to a positive value.</value>
+        </member>
+        <member name="M:CaptainCoder.Inventory.Dimensions.GetEnumerator">
+            <summary>
+            Provides an enumerator that iterates over <see cref="P:CaptainCoder.Inventory.Dimensions.Positions"/>.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Inventory.IInventoryGrid`1">
+            <summary>
+            The <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/> defines a grid of cells that can hold <see cref="T:CaptainCoder.Inventory.IInventoryItem"/>s.
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.Inventory.IInventoryGrid`1.GridSize">
+            <summary>
+            The <see cref="T:CaptainCoder.Inventory.Dimensions"/> of this <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/>
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.Inventory.IInventoryGrid`1.Items">
+            <summary>
+            A enumerable containing one entry for every <see cref="T:CaptainCoder.Inventory.IInventoryItem"/> in this
+            <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/>
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Inventory.IInventoryGrid`1.TryGetItemAt(CaptainCoder.Core.Position,`0@)">
+            <summary>
+            Attempts to retrieve an item at the specified position. If an item
+            exists in that position, returns true and populates <paramref
+            name="item"/> otherwise returns false and the value of <paramref
+            name="item"/> is undefined.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Inventory.IInventoryGrid`1.IsOccupied(CaptainCoder.Core.Position)">
+            <summary>
+            Returns true if the specified <see cref="T:CaptainCoder.Core.Position"/> is occupied and
+            false otherwise.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Inventory.IInventoryGrid`1.TrySetItemAt(CaptainCoder.Core.Position,`0)">
+            <summary>
+            Attempts to add the specified <paramref name="item"/> to this inventory
+            by placing its top left corner in the specified <see cref="T:CaptainCoder.Core.Position"/>.
+            Returns true if the <paramref name="item"/> was added successfully and
+            false otherwise. This method will fail if an item occupies any of the
+            spaces this item requires.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Inventory.IInventoryGrid`1.TrySetItemAt(CaptainCoder.Core.Position,`0,`0@)">
+            <summary>
+            Attempts to add the specified <paramref name="item"/> to this inventory
+            by placing its top left corner in the specified <see cref="T:CaptainCoder.Core.Position"/>.
+            Returns true if the <paramref name="item"/> was added successfully and
+            false otherwise. For convenience, on success if exactly one item
+            occupied the area that <paramref name="item"/> now occupies, the
+            <paramref name="removedItem"/> is set to that item. If no such item
+            existed, the value will be null.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Inventory.IInventoryGrid`1.TryRemoveItemAt(CaptainCoder.Core.Position,`0@)">
+            <summary>
+            Attempts to remove an item at the specified position. Returns true if an
+            item was present and sets <paramref name="item"/> to the removed item.
+            Otherwise returns false and <paramref name="item"/> is undefined.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Inventory.IInventoryGrid`1.GridSlot">
+            <summary>
+            A <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1.GridSlot"/> represents where the top left corner
+            of an <see cref="T:CaptainCoder.Inventory.IInventoryItem"/> is within a <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/>
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Inventory.IInventoryGrid`1.GridSlot.#ctor(CaptainCoder.Core.Position,`0,CaptainCoder.Inventory.IInventoryGrid{`0})">
+            <summary>
+            A <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1.GridSlot"/> represents where the top left corner
+            of an <see cref="T:CaptainCoder.Inventory.IInventoryItem"/> is within a <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/>
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Inventory.IInventoryItem">
+            <summary>
+            The <see cref="T:CaptainCoder.Inventory.IInventoryItem"/> interface specifies an item that can be
+            placed within an <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/>. 
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.Inventory.IInventoryItem.Size">
+            <summary>
+            The amount of space this <see cref="T:CaptainCoder.Inventory.IInventoryItem"/> occupies.
+            </summary>
+        </member>
+        <member name="T:CaptainCoder.Inventory.SimpleInventoryGrid`1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Inventory.SimpleInventoryGrid`1.#ctor">
+            <summary>
+            Initializes an instance of <see cref="T:CaptainCoder.Inventory.SimpleInventoryGrid`1"/> with a
+            GridSize of 4 Rows and 10 Columns.
+            </summary>
+        </member>
+        <member name="M:CaptainCoder.Inventory.SimpleInventoryGrid`1.#ctor(CaptainCoder.Inventory.Dimensions)">
+            <summary>
+            Initializes an instance of <see cref="T:CaptainCoder.Inventory.SimpleInventoryGrid`1"/> with the
+            specified <paramref name="gridSize"/>
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.Inventory.SimpleInventoryGrid`1.GridSize">
+            <inheritdoc/>
+        </member>
+        <member name="P:CaptainCoder.Inventory.SimpleInventoryGrid`1.Items">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Inventory.SimpleInventoryGrid`1.IsOccupied(CaptainCoder.Core.Position)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Inventory.SimpleInventoryGrid`1.TryGetItemAt(CaptainCoder.Core.Position,`0@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Inventory.SimpleInventoryGrid`1.TryRemoveItemAt(CaptainCoder.Core.Position,`0@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Inventory.SimpleInventoryGrid`1.TrySetItemAt(CaptainCoder.Core.Position,`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CaptainCoder.Inventory.SimpleInventoryGrid`1.TrySetItemAt(CaptainCoder.Core.Position,`0,`0@)">
+            <inheritdoc/>
+        </member>
     </members>
 </doc>
