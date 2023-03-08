@@ -7,7 +7,7 @@ nav_order: 0
 # Let's Make a Grid Based Inventory System
 {: .no_toc }
 
-![Inventory System](imgs/inventory.png)
+![Inventory System](imgs/Inventory.png)
 
 Hello coders! Captain Coder here with another learning series. On the Captain
 Coder's Academy discord, it was proposed that I implement an inventory system
