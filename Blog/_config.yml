@@ -1,0 +1,22 @@
+title: Inventory System
+description: Let's make a Grid Based Inventory System
+theme: just-the-docs
+
+url: https://inventory.captaincoder.org/
+
+# aux_links:
+#   Google Classroom: https://classroom.google.com/
+
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: yellow
+  tip:
+    title: Tip
+    color: blue
+  funfact:
+    title: "Fun Fact"
+    color: blue
