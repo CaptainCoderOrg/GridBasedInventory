@@ -40,6 +40,17 @@
             Provides an enumerator that iterates over <see cref="P:CaptainCoder.Inventory.Dimensions.Positions"/>.
             </summary>
         </member>
+        <member name="T:CaptainCoder.Inventory.IHasInventoryGrid`1">
+            <summary>
+            The <see cref="T:CaptainCoder.Inventory.IHasInventoryGrid`1"/> interface is used to identify 
+            data types that are composed with an <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/>.
+            </summary>
+        </member>
+        <member name="P:CaptainCoder.Inventory.IHasInventoryGrid`1.InventoryGrid">
+            <summary>
+            Retrieves the <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/>
+            </summary>
+        </member>
         <member name="T:CaptainCoder.Inventory.IInventoryGrid`1">
             <summary>
             The <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/> defines a grid of cells that can hold <see cref="T:CaptainCoder.Inventory.IInventoryItem"/>s.
@@ -108,6 +119,28 @@
             A <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1.GridSlot"/> represents where the top left corner
             of an <see cref="T:CaptainCoder.Inventory.IInventoryItem"/> is within a <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/>
             </summary>
+        </member>
+        <member name="T:CaptainCoder.Inventory.IInventoryGridAdapter`1">
+            <summary>
+            The <see cref="T:CaptainCoder.Inventory.IInventoryGridAdapter`1"/> interface provides a default
+            implementation for the <see cref="T:CaptainCoder.Inventory.IInventoryGrid`1"/> interface through the
+            <see cref="T:CaptainCoder.Inventory.IHasInventoryGrid`1"/> interface. See the example below for how
+            to utilize it.
+            </summary>
+            <example>
+            In Unity, this is intended to be used with a ScriptableObject that delegates
+            the work to an underlying implementation (<see cref="T:CaptainCoder.Inventory.SimpleInventoryGrid`1"/>):
+            <code>
+            public class InventoryGridData : ScriptableObject, IInventoryGridAdapter&lt;ItemType&gt; 
+            {
+                [SerializeField]
+                private MutableDimensions _dimensions = new (1,1);
+                private IInventoryGrid&lt;ItemType&gt; _grid;
+                public IInventoryGrid&lt;ItemType&gt; InventoryGrid => 
+                            _grid ??= new SimpleInventoryGrid&lt;ItemType&gt;(_dimensions.Freeze());
+            }
+            </code>
+            </example>
         </member>
         <member name="T:CaptainCoder.Inventory.IInventoryItem">
             <summary>

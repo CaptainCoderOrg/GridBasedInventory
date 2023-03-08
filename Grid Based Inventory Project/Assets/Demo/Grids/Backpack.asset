@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c631eb31bd9f12443a0810f03f6a7513, type: 3}
-  m_Name: PlayerInventory
+  m_Script: {fileID: 11500000, guid: dd71b6ef0264f0749b3d1b846eaef2cb, type: 3}
+  m_Name: Backpack
   m_EditorClassIdentifier: 
   _dimensions:
-    Rows: 4
-    Cols: 10
+    Rows: 6
+    Cols: 2
