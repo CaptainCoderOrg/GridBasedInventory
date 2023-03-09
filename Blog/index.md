@@ -52,5 +52,16 @@ inventory or another container type.
 * [Read More]({% link pages/02-day-2.md %})
 * [Watch On YouTube](https://youtube.com/live/RL9k7JHkCGU?feature=share)
 
+## Day 3: Grid Logic System
+{: .no_toc }
+
+Today, we explored using the UI Toolkit once again to create parameterized
+elements that can be reused in the UI Toolkit builder. More specifically, we
+implemented a reusable `GridElement` component. Additionally, we explored how to
+do 9-slicing on sprites within the UI Toolkit Builder to automatically resize 
+our container borders to wrap the size of the grid.
+
+* [Read More]({% link pages/03-day-3.md %})
+* [Watch On YouTube](https://youtube.com/live/N9I2VYcUbsU?feature=share)
 
 {% include Links.md %}
