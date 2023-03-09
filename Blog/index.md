@@ -42,4 +42,15 @@ two interfaces: `IInventoryItem` and `IInventoryGrid`.
 * [Read More]({% link pages/01-day-1.md %})
 * [Watch On YouTube](https://youtube.com/live/uRBIHAHNVMw?feature=share)
 
+## Day 2 - Grid Logic System
+
+Today, we implemented a simple version of the `IInventoryGrid` interface as well
+as 4 unit tests to ensure our the interface can meet our needs. With that in
+place, we were able to write scriptable objects to represent a player's
+inventory or another container type.
+
+* [Read More]({% link pages/02-day-2.md %})
+* [Watch On YouTube](https://youtube.com/live/RL9k7JHkCGU?feature=share)
+
+
 {% include Links.md %}
