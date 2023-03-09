@@ -1,4 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="InventoryGrid" src="project://database/Assets/CaptainCoder/Inventory/UI/InventoryGrid.uxml?fileID=9197481963319205126&amp;guid=8b045c1c6814276428c63ef3906a0c0f&amp;type=3#InventoryGrid" />
     <Style src="project://database/Assets/CaptainCoder/Inventory/UI/GridStyles.uss?fileID=7433441132597879392&amp;guid=28c02647ef3fe924685af46d00110ee9&amp;type=3#GridStyles" />
-    <CaptainCoder.Inventory.UnityEngine.GridElement rows="6" columns="10" cell-size="32" name="GridElement" class="grid" />
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Instance template="InventoryGrid" name="InventoryGrid" style="flex-shrink: 0;">
+            <AttributeOverrides element-name="GridElement" columns="8" />
+        </ui:Instance>
+        <ui:Instance template="InventoryGrid" name="InventoryGrid">
+            <AttributeOverrides element-name="GridElement" rows="3" />
+        </ui:Instance>
+    </ui:VisualElement>
+    <ui:Instance template="InventoryGrid" name="InventoryGrid" />
 </ui:UXML>
