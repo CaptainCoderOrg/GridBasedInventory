@@ -7,7 +7,9 @@ namespace CaptainCoder.Inventory.UnityEngine
 {
     public class GridRowElement : VisualElement
     {
-        public GridRowElement(int columns, int cellSize) : this() => Init(columns, cellSize);
+        public GridRowElement(int row, int columns, int cellSize) : this() => Init(row, columns, cellSize);
+        public event System.Action<GridSlotElement> OnPointerEntered;
+        public event System.Action<GridSlotElement> OnClicked;
         
         public GridRowElement()
         {
@@ -16,16 +18,21 @@ namespace CaptainCoder.Inventory.UnityEngine
 
         public int Columns { get; set; }
         public int CellSize { get; set; }
+        public int Row { get; private set; }
 
-        private void Init(int columns, int cellSize)
+        private void Init(int row, int columns, int cellSize)
         {
             CellSize = cellSize;
             Columns = columns;
+            Row = row;
             // TODO: Consider when Init is being called?
             Clear();
-            for (int i = 0; i < Columns; i++)
+            for (int col = 0; col < Columns; col++)
             {
-                Add(new GridSlotElement(cellSize));
+                GridSlotElement slot = new GridSlotElement(cellSize, new Core.Position(row, col));
+                Add(slot);
+                slot.OnPointerEntered += (slot) => OnPointerEntered?.Invoke(slot);
+                slot.OnClicked += (slot) => OnClicked?.Invoke(slot);
             }
         }
 
@@ -40,8 +47,8 @@ namespace CaptainCoder.Inventory.UnityEngine
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
             {
                 base.Init(ve, bag, cc);
-                var slot = ve as GridRowElement;
-                slot.Init(_columns.GetValueFromBag(bag, cc), _cellSize.GetValueFromBag(bag, cc));
+                var row = ve as GridRowElement;
+                row.Init(row.Row, _columns.GetValueFromBag(bag, cc), _cellSize.GetValueFromBag(bag, cc));
             }
         }
 

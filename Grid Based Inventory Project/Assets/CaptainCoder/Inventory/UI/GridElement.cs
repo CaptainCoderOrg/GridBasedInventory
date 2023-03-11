@@ -16,6 +16,8 @@ namespace CaptainCoder.Inventory.UnityEngine
         public int Rows { get; set; }
         public int Columns { get; set; }
         public int CellSize { get; set; }
+        public event System.Action<GridSlotElement> OnPointerEntered;
+        public event System.Action<GridSlotElement> OnClicked;
 
         public void UpdateDimensions(Dimensions newSize) => Init(newSize.Rows, newSize.Columns, CellSize);
 
@@ -27,7 +29,10 @@ namespace CaptainCoder.Inventory.UnityEngine
             Clear();
             for (int r = 0; r < Rows; r++)
             {
-                Add(new GridRowElement(columns, cellSize));
+                GridRowElement row = new (r, columns, cellSize);
+                row.OnPointerEntered += (slot) => OnPointerEntered?.Invoke(slot);
+                row.OnClicked += (slot) => OnClicked?.Invoke(slot);
+                Add(row);
             }
         }
 

@@ -39,3 +39,9 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
+.item-container {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.29);
+    position: absolute;
+}

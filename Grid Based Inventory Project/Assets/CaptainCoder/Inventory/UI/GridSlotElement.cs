@@ -6,25 +6,30 @@ using UnityEngine.UIElements;
 namespace CaptainCoder.Inventory.UnityEngine
 {
     public class GridSlotElement : VisualElement
-    {
-        
-        public GridSlotElement(int cellSize) : this()
-        {
-            Init(cellSize);
-        }
+    {        
+        public GridSlotElement(int cellSize, Core.Position position) : this() => Init(cellSize, position);
+        public event System.Action<GridSlotElement> OnPointerEntered;
+        public event System.Action<GridSlotElement> OnClicked;
 
         public GridSlotElement()
         {
             AddToClassList("grid-slot");
+            RegisterCallback<PointerEnterEvent>(OnPointerEnter);
+            RegisterCallback<PointerDownEvent>(OnPointerDown);
         }
 
         public int CellSize { get; set; }
+        public Core.Position Position { get; private set; }
 
-        private void Init(int cellSize) {
+        private void Init(int cellSize, Core.Position position) {
             CellSize = cellSize;
             style.width = cellSize;
             style.height = cellSize;
+            Position = position;
         }
+
+        private void OnPointerEnter(PointerEnterEvent evt) => OnPointerEntered?.Invoke(this);
+        private void OnPointerDown(PointerDownEvent evt) => OnClicked?.Invoke(this);
 
         public new class UxmlFactory : UxmlFactory<GridSlotElement, UxmlTraits> { }
 
@@ -36,9 +41,8 @@ namespace CaptainCoder.Inventory.UnityEngine
             {
                 base.Init(ve, bag, cc);
                 var slot = ve as GridSlotElement;
-                slot.Init(_cellSize.GetValueFromBag(bag, cc));
+                slot.Init(_cellSize.GetValueFromBag(bag, cc), slot.Position);
             }
         }
-
     }
 }

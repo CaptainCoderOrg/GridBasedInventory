@@ -276,4 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5675b5a01f86d4eb35ced8f67345ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InventoryGrid>k__BackingField: {fileID: 11400000, guid: 9a8bab40d36e2fc489095a5b556addb6, type: 2}
+  <InventoryData>k__BackingField: {fileID: 11400000, guid: 9a8bab40d36e2fc489095a5b556addb6, type: 2}
+  TestItem: {fileID: 11400000, guid: 57ed3cce6d14d034a986760204bb1906, type: 2}
+  TestItem2: {fileID: 11400000, guid: 3a8465d51b9c2274cb65e1d82423d57e, type: 2}
+  TestItem3: {fileID: 11400000, guid: e4ea496a4b2a95d47a07d2cdf81d69ae, type: 2}

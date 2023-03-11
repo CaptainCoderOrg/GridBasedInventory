@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5be1f316cbc8d04aa4aafc20ab50160, type: 3}
-  m_Name: Dagger
+  m_Name: Leather Armor
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Dagger
+  <Name>k__BackingField: Leather Armor
   _size:
-    Rows: 2
-    Cols: 1
-  <Sprite>k__BackingField: {fileID: 21300000, guid: ed3308b2491ce4946acb2c23d7058296, type: 3}
+    Rows: 3
+    Cols: 2
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 16632f7e886cc874d85ea03820471c89, type: 3}

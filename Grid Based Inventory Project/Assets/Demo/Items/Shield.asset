@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5be1f316cbc8d04aa4aafc20ab50160, type: 3}
-  m_Name: Dagger
+  m_Name: Shield
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Dagger
+  <Name>k__BackingField: Shield
   _size:
     Rows: 2
-    Cols: 1
-  <Sprite>k__BackingField: {fileID: 21300000, guid: ed3308b2491ce4946acb2c23d7058296, type: 3}
+    Cols: 2
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 246a5bcfcb828bd47b86d835b3df6f59, type: 3}

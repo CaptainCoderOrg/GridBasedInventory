@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5be1f316cbc8d04aa4aafc20ab50160, type: 3}
-  m_Name: Dagger
+  m_Name: Potion
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Dagger
+  <Name>k__BackingField: Potion
   _size:
-    Rows: 2
+    Rows: 1
     Cols: 1
-  <Sprite>k__BackingField: {fileID: 21300000, guid: ed3308b2491ce4946acb2c23d7058296, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 5371fd3715a16bf43a8fc42b93375d87, type: 3}
