@@ -17,6 +17,8 @@ namespace CaptainCoder.Inventory.UnityEngine
         public int Columns { get; set; }
         public int CellSize { get; set; }
 
+        public void UpdateDimensions(Dimensions newSize) => Init(newSize.Rows, newSize.Columns, CellSize);
+
         private void Init(int rows, int columns, int cellSize)
         {
             Rows = rows;
