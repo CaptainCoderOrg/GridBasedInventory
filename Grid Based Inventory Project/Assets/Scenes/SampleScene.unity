@@ -280,3 +280,5 @@ MonoBehaviour:
   TestItem: {fileID: 11400000, guid: 57ed3cce6d14d034a986760204bb1906, type: 2}
   TestItem2: {fileID: 11400000, guid: 3a8465d51b9c2274cb65e1d82423d57e, type: 2}
   TestItem3: {fileID: 11400000, guid: e4ea496a4b2a95d47a07d2cdf81d69ae, type: 2}
+  TestItem4: {fileID: 11400000, guid: 8da20ac25e50aaf49bbf96ad69f94e08, type: 2}
+  TestItem5: {fileID: 11400000, guid: 6ce2109d3cc4e034cad03c5868a36b3f, type: 2}

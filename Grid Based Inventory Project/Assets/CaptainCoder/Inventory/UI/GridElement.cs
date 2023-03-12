@@ -8,16 +8,16 @@ namespace CaptainCoder.Inventory.UnityEngine
 {
     public class GridElement : VisualElement
     {
-        public GridElement()
-        {
-            AddToClassList("grid");
-        }
+        public GridElement() => AddToClassList("grid");
 
         public int Rows { get; set; }
         public int Columns { get; set; }
         public int CellSize { get; set; }
         public event System.Action<GridSlotElement> OnPointerEntered;
         public event System.Action<GridSlotElement> OnClicked;
+
+        public VisualElement InventoryContainer { get; private set; }
+        public VisualElement SelectContainer { get; private set; }
 
         public void UpdateDimensions(Dimensions newSize) => Init(newSize.Rows, newSize.Columns, CellSize);
 
@@ -29,7 +29,7 @@ namespace CaptainCoder.Inventory.UnityEngine
             Clear();
             for (int r = 0; r < Rows; r++)
             {
-                GridRowElement row = new (r, columns, cellSize);
+                GridRowElement row = new(r, columns, cellSize);
                 row.OnPointerEntered += (slot) => OnPointerEntered?.Invoke(slot);
                 row.OnClicked += (slot) => OnClicked?.Invoke(slot);
                 Add(row);
@@ -40,9 +40,9 @@ namespace CaptainCoder.Inventory.UnityEngine
 
         public sealed new class UxmlTraits : VisualElement.UxmlTraits
         {
-            UxmlIntAttributeDescription _columns = new () { name = "columns", defaultValue = 10 };
-            UxmlIntAttributeDescription _rows = new () { name = "rows", defaultValue = 4 };
-            UxmlIntAttributeDescription _cellSize = new () { name = "cell-size", defaultValue = 32 };
+            UxmlIntAttributeDescription _columns = new() { name = "columns", defaultValue = 10 };
+            UxmlIntAttributeDescription _rows = new() { name = "rows", defaultValue = 4 };
+            UxmlIntAttributeDescription _cellSize = new() { name = "cell-size", defaultValue = 32 };
 
             public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
             {

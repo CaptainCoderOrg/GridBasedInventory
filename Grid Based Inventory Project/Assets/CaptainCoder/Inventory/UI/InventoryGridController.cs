@@ -16,6 +16,11 @@ namespace CaptainCoder.Inventory.UnityEngine
         public T TestItem2;
         [field: SerializeField]
         public T TestItem3;
+        [field: SerializeField]
+        public T TestItem4;
+        [field: SerializeField]
+        public T TestItem5;
+
         private readonly Dictionary<T, GridItemElement<T>> _itemLookup = new();
         private GridItemElement<T> _selected = null;
         private void Awake()
@@ -26,6 +31,8 @@ namespace CaptainCoder.Inventory.UnityEngine
             AddItem((1, 2), TestItem);
             AddItem((0, 0), TestItem2);
             AddItem((1, 4), TestItem3);
+            AddItem((1, 6), TestItem4);
+            AddItem((1, 8), TestItem5);
             _gridElement.OnClicked += HandleClick;
         }
 
@@ -45,7 +52,7 @@ namespace CaptainCoder.Inventory.UnityEngine
             {
                 HandleSelect(slot);
             }
-            else 
+            else
             {
                 HandleUnSelect(slot);
             }
