@@ -2,7 +2,6 @@
 <script>
     document.addEventListener("DOMContentLoaded", function(event) { 
         const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-    
         function setTheme(theme) {
             if (theme === 'dark') {
                 jtd.setTheme('dark');
@@ -15,23 +14,19 @@
             }
         };
 
-       
         jtd.addEvent(toggleDarkMode, 'click', function(){
-             // event listener for manual user interaction with the theme toggle
-        if (jtd.getTheme() === 'dark') {
-            setTheme('light');
-        } else {
-            setTheme('dark');
-        }
+            if (jtd.getTheme() === 'dark') {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
         });
 
-        // listen for changes to the prefers-color-scheme media query
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
             const newColorScheme = event.matches ? "dark" : "light";
             setTheme(newColorScheme);
         });
 
-        // set initial theme based on local setting
         if(window.matchMedia('(prefers-color-scheme: dark)').matches){
             setTheme('dark');
         } else {
