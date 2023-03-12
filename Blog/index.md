@@ -53,7 +53,6 @@ inventory or another container type.
 * [Watch On YouTube](https://youtube.com/live/RL9k7JHkCGU?feature=share)
 
 ## Day 3: Grid Logic System
-{: .no_toc }
 
 Today, we explored using the UI Toolkit once again to create parameterized
 elements that can be reused in the UI Toolkit builder. More specifically, we
@@ -63,5 +62,14 @@ our container borders to wrap the size of the grid.
 
 * [Read More]({% link pages/03-day-3.md %})
 * [Watch On YouTube](https://youtube.com/live/N9I2VYcUbsU?feature=share)
+
+## Day 4: Clickable Items
+
+Today, we used Leonaro.AI to generate equipment graphics, added a UI component
+for items, and connected the inventory grid logic with the UI through a
+controller script.
+
+* [Read More]({% link pages/04-day-4.md %})
+* [Watch On YouTube](https://www.youtube.com/watch?v=kMufcKTnmTQ)
 
 {% include Links.md %}
