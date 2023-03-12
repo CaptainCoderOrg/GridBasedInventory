@@ -164,12 +164,6 @@
             GridSize of 4 Rows and 10 Columns.
             </summary>
         </member>
-        <member name="M:CaptainCoder.Inventory.SimpleInventoryGrid`1.#ctor(CaptainCoder.Inventory.Dimensions)">
-            <summary>
-            Initializes an instance of <see cref="T:CaptainCoder.Inventory.SimpleInventoryGrid`1"/> with the
-            specified <paramref name="gridSize"/>
-            </summary>
-        </member>
         <member name="P:CaptainCoder.Inventory.SimpleInventoryGrid`1.GridSize">
             <inheritdoc/>
         </member>

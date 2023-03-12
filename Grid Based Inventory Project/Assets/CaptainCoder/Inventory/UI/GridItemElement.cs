@@ -7,12 +7,11 @@ namespace CaptainCoder.Inventory.UnityEngine
     {
         private static int s_SelectedOffset = 3;
         private bool IsSelected = false;
-        private GridElement _parent;
 
         public GridItemElement(Core.Position position, T item, GridElement parent)
         {
             Item = item;
-            _parent = parent;
+            Parent = parent;
             pickingMode = PickingMode.Ignore;
             Image img = new()
             {
@@ -27,6 +26,7 @@ namespace CaptainCoder.Inventory.UnityEngine
             Add(img);
         }
 
+        public GridElement Parent { get; set; }
         public T Item { get; init; }
 
         public void Select(ItemCursorController<T> controller)
@@ -50,14 +50,14 @@ namespace CaptainCoder.Inventory.UnityEngine
         private void HandleMouseMove(GridSlotElement slot, GridElement grid)
         {
             if (!IsSelected) { return; }
-            if (_parent != grid)
+            if (Parent != grid)
             {
-                _parent.Remove(this);
+                Parent?.Remove(this);
                 grid.Add(this);
-                _parent = grid;
+                Parent = grid;
             }
-            style.top = slot.Position.Row * _parent.CellSize + s_SelectedOffset;
-            style.left = slot.Position.Col * _parent.CellSize + s_SelectedOffset;
+            style.top = slot.Position.Row * Parent.CellSize + s_SelectedOffset;
+            style.left = slot.Position.Col * Parent.CellSize + s_SelectedOffset;
         }
     }
 }
