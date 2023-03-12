@@ -2,3 +2,5 @@ Art
 .vscode
 bin/
 obj/
+
+.dccache
