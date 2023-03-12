@@ -2,4 +2,7 @@ Art
 .vscode
 bin/
 obj/
+
 Build/
+.dccache
+
