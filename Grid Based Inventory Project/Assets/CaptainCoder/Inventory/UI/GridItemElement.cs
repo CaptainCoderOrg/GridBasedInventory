@@ -1,4 +1,5 @@
 using UnityEngine.UIElements;
+using UnityEngine;
 
 namespace CaptainCoder.Inventory.UnityEngine
 {
@@ -6,7 +7,7 @@ namespace CaptainCoder.Inventory.UnityEngine
     {
         private static int s_SelectedOffset = 3;
         private bool IsSelected = false;
-        private readonly GridElement _parent;
+        private GridElement _parent;
 
         public GridItemElement(Core.Position position, T item, GridElement parent)
         {
@@ -28,27 +29,33 @@ namespace CaptainCoder.Inventory.UnityEngine
 
         public T Item { get; init; }
 
-        public void Select()
+        public void Select(ItemCursorController<T> controller)
         {
             IsSelected = true;
             BringToFront();
-            _parent.OnPointerEntered += HandleMouseMove;
+            controller.OnPointerEntered += HandleMouseMove;
             style.top = style.top.value.value + s_SelectedOffset;
             style.left = style.left.value.value + s_SelectedOffset;
 
         }
 
-        public void UnSelect()
+        public void UnSelect(ItemCursorController<T> controller)
         {
             IsSelected = false;
-            _parent.OnPointerEntered -= HandleMouseMove;
+            controller.OnPointerEntered -= HandleMouseMove;
             style.top = style.top.value.value - s_SelectedOffset;
             style.left = style.left.value.value - s_SelectedOffset;
         }
 
-        private void HandleMouseMove(GridSlotElement slot)
+        private void HandleMouseMove(GridSlotElement slot, GridElement grid)
         {
             if (!IsSelected) { return; }
+            if (_parent != grid)
+            {
+                _parent.Remove(this);
+                grid.Add(this);
+                _parent = grid;
+            }
             style.top = slot.Position.Row * _parent.CellSize + s_SelectedOffset;
             style.left = slot.Position.Col * _parent.CellSize + s_SelectedOffset;
         }
