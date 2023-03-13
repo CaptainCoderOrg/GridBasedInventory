@@ -32,7 +32,6 @@ window.jtd.setTheme = function(theme) {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-    
     jtd.addEvent(document.querySelector('.js-toggle-dark-mode'), 'click', function(){
         if (jtd.getTheme() === 'dark') {
             setTheme('light');
@@ -47,9 +46,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 });
 
-
 if (localStorage.getItem(storageThemeKey)) {
-    console.log("Theme found" + localStorage.getItem(storageThemeKey));
     window.jtd.setTheme(localStorage.getItem(storageThemeKey));
 }
-console.log("end onReady");
