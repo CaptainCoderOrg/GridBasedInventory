@@ -1,3 +1,4 @@
+// Key for Theme Setting
 const storageThemeKey = "selectedTheme";
 function setTheme(theme) {
     let toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
@@ -12,25 +13,20 @@ function setTheme(theme) {
     }
 };
 
+// Override standard jtd.getTheme function, to have right selector
 window.jtd.getTheme = function() {
-    if (!localStorage.getItem(storageThemeKey)) {
-        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        };
-    }
-
     var cssFileHref = document.querySelector('[rel="stylesheet"][title="theme"]').getAttribute('href');
     return cssFileHref.substring(cssFileHref.lastIndexOf('-') + 1, cssFileHref.length - 4);
 }
 
+// Override standard jtd.setTheme function, to store changed theme in local storage
 window.jtd.setTheme = function(theme) {
   localStorage.setItem(storageThemeKey, theme);
   var cssFile = document.querySelector('[rel="stylesheet"][title="theme"]');
   cssFile.setAttribute('href', '{{ "assets/css/just-the-docs-" | relative_url }}' + theme + '.css');
 }
 
+// Apply click listener to toggle button
 document.addEventListener("DOMContentLoaded", function(event) { 
     jtd.addEvent(document.querySelector('.js-toggle-dark-mode'), 'click', function(){
         if (jtd.getTheme() === 'dark') {
@@ -39,13 +35,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
             setTheme('dark');
         }
     });
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        const newColorScheme = event.matches ? "dark" : "light";
-        setTheme(newColorScheme);
-    });
 });
 
+// Apply listener to system theme change
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    const newColorScheme = event.matches ? "dark" : "light";
+    setTheme(newColorScheme);
+});
+
+
+// This applies the theme from local storage, if it exists
 if (localStorage.getItem(storageThemeKey)) {
     window.jtd.setTheme(localStorage.getItem(storageThemeKey));
 }
