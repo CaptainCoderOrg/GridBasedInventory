@@ -47,4 +47,8 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
 // This applies the theme from local storage, if it exists
 if (localStorage.getItem(storageThemeKey)) {
     window.jtd.setTheme(localStorage.getItem(storageThemeKey));
+} else {
+    // first time visitors - apply system default
+    const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+    window.jtd.setTheme(theme);
 }
