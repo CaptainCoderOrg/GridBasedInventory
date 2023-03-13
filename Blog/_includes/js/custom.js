@@ -13,6 +13,10 @@ function setTheme(theme) {
     }
 };
 
+window.onReady(function() {
+    window.jtd.getTheme();
+});
+
 window.jtd.getTheme = function() {
     if (!localStorage.getItem(storageThemeKey)) {
         if(window.matchMedia('(prefers-color-scheme: dark)').matches){
