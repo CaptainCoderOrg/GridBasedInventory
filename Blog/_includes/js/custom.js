@@ -1,7 +1,7 @@
 const storageThemeKey = "selectedTheme";
-const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 
 function setTheme(theme) {
+    let toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
     if (theme === 'dark') {
         jtd.setTheme('dark');
         toggleDarkMode.classList.add("dark");
@@ -35,7 +35,7 @@ window.jtd.setTheme = function(theme) {
 
 document.addEventListener("DOMContentLoaded", function(event) { 
     
-    jtd.addEvent(toggleDarkMode, 'click', function(){
+    jtd.addEvent(document.querySelector('.js-toggle-dark-mode'), 'click', function(){
         if (jtd.getTheme() === 'dark') {
             setTheme('light');
         } else {
