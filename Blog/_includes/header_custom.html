@@ -1,39 +1,4 @@
 
-<script>
-    document.addEventListener("DOMContentLoaded", function(event) { 
-        const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                jtd.setTheme('dark');
-                toggleDarkMode.classList.add("dark");
-                toggleDarkMode.classList.remove("light");
-            } else {
-                jtd.setTheme('light');
-                toggleDarkMode.classList.add("light");
-                toggleDarkMode.classList.remove("dark");
-            }
-        };
-
-        jtd.addEvent(toggleDarkMode, 'click', function(){
-            if (jtd.getTheme() === 'dark') {
-                setTheme('light');
-            } else {
-                setTheme('dark');
-            }
-        });
-
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            const newColorScheme = event.matches ? "dark" : "light";
-            setTheme(newColorScheme);
-        });
-
-        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        };
-    });
-</script>
 
 <svg
 xmlns="http://www.w3.org/2000/svg"
