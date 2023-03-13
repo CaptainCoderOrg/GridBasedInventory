@@ -44,7 +44,7 @@ jobs:
       - name: Build with Jekyll
         working-directory: Blog/
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --destination ../_site --baseurl "GridBasedInventory/"
+        run: bundle exec jekyll build --destination ../_site --baseurl ""
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
