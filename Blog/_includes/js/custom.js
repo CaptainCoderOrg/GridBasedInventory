@@ -13,7 +13,8 @@ function setTheme(theme) {
 };
 
 window.jtd.onReady(function() {
-    window.jtd.getTheme();
+    // re-apply theme
+    window.jtd.setThe(window.jtd.getTheme());
 });
 
 window.jtd.getTheme = function() {
