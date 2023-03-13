@@ -20,16 +20,15 @@ window.jtd.getTheme = function() {
         } else {
             setTheme('light');
         };
-
     }
 
-    var cssFileHref = document.querySelector('[rel="stylesheet"]').getAttribute('href');
+    var cssFileHref = document.querySelector('[rel="stylesheet"][title="theme"]').getAttribute('href');
     return cssFileHref.substring(cssFileHref.lastIndexOf('-') + 1, cssFileHref.length - 4);
 }
 
 window.jtd.setTheme = function(theme) {
   localStorage.setItem(storageThemeKey, theme);
-  var cssFile = document.querySelector('[rel="stylesheet"]');
+  var cssFile = document.querySelector('[rel="stylesheet"][title="theme"]');
   cssFile.setAttribute('href', '{{ "assets/css/just-the-docs-" | relative_url }}' + theme + '.css');
 }
 
