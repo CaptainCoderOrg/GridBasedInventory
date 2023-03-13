@@ -1,4 +1,18 @@
 const storageThemeKey = "selectedTheme";
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+function setTheme(theme) {
+    if (theme === 'dark') {
+        jtd.setTheme('dark');
+        toggleDarkMode.classList.add("dark");
+        toggleDarkMode.classList.remove("light");
+    } else {
+        jtd.setTheme('light');
+        toggleDarkMode.classList.add("light");
+        toggleDarkMode.classList.remove("dark");
+    }
+};
+
 window.jtd.getTheme = function() {
     if (!localStorage.getItem(storageThemeKey)) {
         if(window.matchMedia('(prefers-color-scheme: dark)').matches){
@@ -20,19 +34,7 @@ window.jtd.setTheme = function(theme) {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-    const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-    function setTheme(theme) {
-        if (theme === 'dark') {
-            jtd.setTheme('dark');
-            toggleDarkMode.classList.add("dark");
-            toggleDarkMode.classList.remove("light");
-        } else {
-            jtd.setTheme('light');
-            toggleDarkMode.classList.add("light");
-            toggleDarkMode.classList.remove("dark");
-        }
-    };
-
+    
     jtd.addEvent(toggleDarkMode, 'click', function(){
         if (jtd.getTheme() === 'dark') {
             setTheme('light');
