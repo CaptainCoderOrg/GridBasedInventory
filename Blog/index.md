@@ -79,6 +79,6 @@ for items, and connected the inventory grid logic with the UI through a
 controller script.
 
 * [Read More]({% link pages/05-day-5.md %})
-* [Watch On YouTube](https://www.youtube.com/watch?v=kMufcKTnmTQ)
+* [Watch On YouTube](https://www.youtube.com/live/4ZiiWpHtYSo?feature=share)
 
 {% include Links.md %}
