@@ -1,5 +1,4 @@
 const storageThemeKey = "selectedTheme";
-
 function setTheme(theme) {
     let toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
     if (theme === 'dark') {
@@ -13,7 +12,7 @@ function setTheme(theme) {
     }
 };
 
-window.onReady(function() {
+window.jtd.onReady(function() {
     window.jtd.getTheme();
 });
 
