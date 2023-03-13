@@ -12,17 +12,6 @@ function setTheme(theme) {
     }
 };
 
-window.jtd.onReady(function() {
-    // re-apply theme
-    console.log("onReady");
-    if (localStorage.getItem(storageThemeKey)) {
-        console.log("Theme found");
-        window.jtd.setTheme(localStorage.getItem(storageThemeKey));
-    }
-    console.log("end onReady");
-
-});
-
 window.jtd.getTheme = function() {
     if (!localStorage.getItem(storageThemeKey)) {
         if(window.matchMedia('(prefers-color-scheme: dark)').matches){
@@ -57,3 +46,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         setTheme(newColorScheme);
     });
 });
+
+
+if (localStorage.getItem(storageThemeKey)) {
+    console.log("Theme found" + localStorage.getItem(storageThemeKey));
+    window.jtd.setTheme(localStorage.getItem(storageThemeKey));
+}
+console.log("end onReady");
