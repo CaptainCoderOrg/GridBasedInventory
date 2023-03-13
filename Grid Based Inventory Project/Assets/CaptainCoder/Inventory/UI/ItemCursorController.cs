@@ -11,14 +11,9 @@ namespace CaptainCoder.Inventory.UnityEngine
         [field: SerializeField]
         public UIDocument TopLayer { get; private set; }
         private GridItemElement<T> _selected = null;
-        public GridItemElement<T> Selected
-        {
-            get => _selected;
-            set => _selected = value;
-        }
+        public GridItemElement<T> Selected { get => _selected; set => _selected = value; }
 
         public void OnPointerEnter(GridSlotElement slot, GridElement grid) => OnPointerEntered?.Invoke(slot, grid);
-
         private void Awake()
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;

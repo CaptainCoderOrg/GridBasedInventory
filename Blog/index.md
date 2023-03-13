@@ -72,4 +72,13 @@ controller script.
 * [Read More]({% link pages/04-day-4.md %})
 * [Watch On YouTube](https://www.youtube.com/watch?v=kMufcKTnmTQ)
 
+# Day 5: Polish and Package
+
+Today, we used Leonaro.AI to generate equipment graphics, added a UI component
+for items, and connected the inventory grid logic with the UI through a
+controller script.
+
+* [Read More]({% link pages/05-day-5.md %})
+* [Watch On YouTube](https://www.youtube.com/watch?v=kMufcKTnmTQ)
+
 {% include Links.md %}
