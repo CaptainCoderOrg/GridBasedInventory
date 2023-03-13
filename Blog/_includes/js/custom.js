@@ -14,7 +14,7 @@ function setTheme(theme) {
 
 window.jtd.onReady(function() {
     // re-apply theme
-    window.jtd.setThe(window.jtd.getTheme());
+    window.jtd.setTheme(window.jtd.getTheme());
 });
 
 window.jtd.getTheme = function() {
