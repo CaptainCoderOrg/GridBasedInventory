@@ -14,7 +14,13 @@ function setTheme(theme) {
 
 window.jtd.onReady(function() {
     // re-apply theme
-    window.jtd.setTheme(window.jtd.getTheme());
+    console.log("onReady");
+    if (localStorage.getItem(storageThemeKey)) {
+        console.log("Theme found");
+        window.jtd.setTheme(localStorage.getItem(storageThemeKey));
+    }
+    console.log("end onReady");
+
 });
 
 window.jtd.getTheme = function() {
