@@ -14,7 +14,7 @@ public class DemoController : MonoBehaviour
     [field: SerializeField]
     public ItemData Shield { get; private set; }
     [field: SerializeField]
-    public InventoryGridController TargetInventory { get; private set; }
+    public GameInventoryController TargetInventory { get; private set; }
 
     void Start()
     {

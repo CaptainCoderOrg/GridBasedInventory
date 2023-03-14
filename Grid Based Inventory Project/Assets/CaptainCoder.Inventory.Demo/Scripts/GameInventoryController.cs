@@ -1,6 +1,6 @@
 using CaptainCoder.Inventory.UnityEngine;
 
-public class InventoryGridController : InventoryGridController<ItemData>
+public class GameInventoryController : InventoryGridController<ItemData>
 {
 
 }
