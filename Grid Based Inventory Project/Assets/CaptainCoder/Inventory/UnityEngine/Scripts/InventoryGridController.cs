@@ -12,8 +12,7 @@ namespace CaptainCoder.Inventory.UnityEngine
         [field: SerializeField]
         public InventoryGridData<T> InventoryData { get; private set; }
         private readonly Dictionary<T, GridItemElement<T>> _itemLookup = new();
-        [field: SerializeField]
-        public ItemCursorController<T> Cursor { get; private set; }
+        public GridCursorController<T> Cursor { get; private set; }
         [field: SerializeField]
         private Vector2 _position;
         public Vector2 Position
@@ -28,6 +27,7 @@ namespace CaptainCoder.Inventory.UnityEngine
         }
         private void Awake()
         {
+            Cursor = GetComponentInParent<GridCursorController<T>>();
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
             _container = root.Q<VisualElement>("Container");
             Position = _position;

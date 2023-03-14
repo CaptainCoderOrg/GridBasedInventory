@@ -1,0 +1,16 @@
+{
+    "name": "CaptainCoder.Inventory.UnityEngine.Demo",
+    "rootNamespace": "CaptainCoder.Inventory.UnityEngine.Demo",
+    "references": [
+        "GUID:05e4567102b04a54385af042a3c0ad91"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,39 @@
+.inventory-border {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url('project://database/Assets/CaptainCoder.Inventory.Demo/Sprites/Dialogues/Dialog%20Box.png?fileID=2800000&guid=a7779d450fa106d48964fdaeee167494&type=3#Dialog Box');
+    -unity-background-scale-mode: stretch-to-fill;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -unity-slice-left: 20;
+    -unity-slice-top: 20;
+    -unity-slice-right: 20;
+    -unity-slice-bottom: 20;
+}
+
+.grid-slot {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgb(255, 198, 0);
+    border-right-color: rgb(255, 198, 0);
+    border-top-color: rgb(255, 198, 0);
+    border-bottom-color: rgb(255, 198, 0);
+}
+
+.item-container {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.29);
+    position: absolute;
+    border-left-color: rgb(255, 198, 0);
+    border-right-color: rgb(255, 198, 0);
+    border-top-color: rgb(255, 198, 0);
+    border-bottom-color: rgb(255, 198, 0);
+}

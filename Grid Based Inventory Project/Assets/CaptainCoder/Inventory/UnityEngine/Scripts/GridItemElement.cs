@@ -29,7 +29,7 @@ namespace CaptainCoder.Inventory.UnityEngine
         public GridElement Parent { get; set; }
         public T Item { get; init; }
 
-        public void Select(ItemCursorController<T> controller)
+        public void Select(GridCursorController<T> controller)
         {
             IsSelected = true;
             BringToFront();
@@ -39,7 +39,7 @@ namespace CaptainCoder.Inventory.UnityEngine
 
         }
 
-        public void UnSelect(ItemCursorController<T> controller)
+        public void UnSelect(GridCursorController<T> controller)
         {
             IsSelected = false;
             controller.OnPointerEntered -= HandleMouseMove;

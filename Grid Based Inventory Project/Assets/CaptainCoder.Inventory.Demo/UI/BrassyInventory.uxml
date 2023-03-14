@@ -1,6 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/CaptainCoder/Inventory/UI/GridStyles.uss?fileID=7433441132597879392&amp;guid=28c02647ef3fe924685af46d00110ee9&amp;type=3#GridStyles" />
-    <ui:VisualElement name="Container" picking-mode="Ignore" class="inventory-border" style="justify-content: center; align-items: center; align-self: center; padding-left: 28px; padding-top: 25px; padding-right: 27px; padding-bottom: 24px; position: absolute; left: 0; top: 0;">
+    <Style src="project://database/Assets/CaptainCoder.Inventory.Demo/UI/BrassyInventory.uss?fileID=7433441132597879392&amp;guid=c9c33b8772977a642a4367930382ee89&amp;type=3#BrassyInventory" />
+    <ui:VisualElement name="Container" picking-mode="Ignore" class="inventory-border">
         <CaptainCoder.Inventory.UnityEngine.GridElement rows="6" columns="20" cell-size="32" name="GridElement" class="grid" />
     </ui:VisualElement>
 </ui:UXML>

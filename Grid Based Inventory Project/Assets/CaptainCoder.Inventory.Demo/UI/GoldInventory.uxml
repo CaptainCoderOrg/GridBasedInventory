@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/CaptainCoder/Inventory/UI/GridStyles.uss?fileID=7433441132597879392&amp;guid=28c02647ef3fe924685af46d00110ee9&amp;type=3#GridStyles" />
+    <Style src="project://database/Assets/CaptainCoder.Inventory.Demo/UI/GoldInventory.uss?fileID=7433441132597879392&amp;guid=a7334392ed46bb7499ca7428230f5ebf&amp;type=3#GoldInventory" />
+    <ui:VisualElement name="Container" picking-mode="Ignore" class="inventory-border">
+        <CaptainCoder.Inventory.UnityEngine.GridElement rows="6" columns="20" cell-size="32" name="GridElement" class="grid" />
+    </ui:VisualElement>
+</ui:UXML>

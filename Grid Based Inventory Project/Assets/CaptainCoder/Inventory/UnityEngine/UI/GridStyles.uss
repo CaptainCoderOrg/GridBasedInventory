@@ -26,20 +26,6 @@
     margin-bottom: auto;
 }
 
-.inventory-border {
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url('project://database/Assets/Sprites/InventoryMainBox.png?fileID=2800000&guid=b390841dbf0b0fb478dd133f4716241d&type=3#InventoryMainBox');
-    -unity-background-scale-mode: stretch-to-fill;
-    -unity-slice-left: 30;
-    -unity-slice-top: 30;
-    -unity-slice-right: 30;
-    -unity-slice-bottom: 30;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
 .item-container {
     flex-grow: 1;
     background-color: rgba(0, 0, 0, 0.29);
